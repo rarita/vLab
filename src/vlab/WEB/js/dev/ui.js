@@ -10,7 +10,7 @@ var fontSize = 14;
 // codeStr = "{\"dataPoints\":[{\"x\":3,\"y\":-9,\"cls\":\"GREEN\"},{\"x\":-4,\"y\":12,\"cls\":\"RED\"},{\"x\":19,\"y\":-13,\"cls\":\"RED\"},{\"x\":0,\"y\":-18,\"cls\":\"RED\"},{\"x\":12,\"y\":-7,\"cls\":\"BLUE\"},{\"x\":-8,\"y\":-2,\"cls\":\"GREEN\"},{\"x\":9,\"y\":-7,\"cls\":\"RED\"},{\"x\":-11,\"y\":-15,\"cls\":\"RED\"},{\"x\":12,\"y\":13,\"cls\":\"RED\"},{\"x\":-9,\"y\":-7,\"cls\":\"RED\"},{\"x\":-18,\"y\":-14,\"cls\":\"BLUE\"},{\"x\":12,\"y\":8,\"cls\":\"GREEN\"},{\"x\":11,\"y\":-14,\"cls\":\"RED\"}],\"pointToClassify\":{\"x\":4,\"y\":-11,\"cls\":null},\"k\":4}";
 // this.window.code = JSON.parse(codeStr);
 
-window.onload = function (event) {
+function refreshUI() {
 
     this.window.solution = {}
     this.window.solution.dataPoints = []

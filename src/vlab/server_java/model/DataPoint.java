@@ -3,6 +3,7 @@ package vlab.server_java.model;
 import vlab.server_java.StaticUtilsProvider;
 import vlab.server_java.common.Classifier;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class DataPoint {
@@ -19,6 +20,9 @@ public class DataPoint {
                 random.nextInt(dim) * ((random.nextBoolean()) ? 1 : -1),
                 Classifier.values()[random.nextInt(Classifier.values().length)]
         );
+    }
+
+    public DataPoint() {
     }
 
     public DataPoint(int x, int y, Classifier cls) {
@@ -49,6 +53,21 @@ public class DataPoint {
 
     public void setCls(Classifier cls) {
         this.cls = cls;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DataPoint dataPoint = (DataPoint) o;
+        return x == dataPoint.x &&
+                y == dataPoint.y &&
+                cls == dataPoint.cls;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, cls);
     }
 
 }

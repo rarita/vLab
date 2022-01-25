@@ -29,7 +29,7 @@
 					</Instructions>
 				</ByDefault>
 				<Algorithm>
-					<!-- {\"complexity\": 4} -->
+					<!-- {\"complexity\": 1} -->
 				</Algorithm>
 			</Generator>
 		</LaboratoryFrame>

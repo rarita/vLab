@@ -15,6 +15,10 @@ import vlab.server_java.model.VariantResponse;
 public class GenerateProcessorImpl implements GenerateProcessor {
 
     private static final int DEFAULT_QUANTITY = 5;
+    private static final String DEFAULT_TEXT = "Вам дано тренировочное множество модели, заданное таблицей справа. \n" +
+            "Необходимо верно расставить классификаторы точек тренировочного множества на координатной оси, что позволит " +
+            "Вам определить наиболее вероятный классификатор объекта, который необходимо оценить.\n После классифицирования " +
+            "точек на координатной оси, определите класс объекта по его K-ближайшим соседям.";
 
     @Override
     public GeneratingResult generate(String condition) {
@@ -32,7 +36,7 @@ public class GenerateProcessorImpl implements GenerateProcessor {
 
         final VariantResponse varRsp = VariantResponse.random(q);
 
-        String text = "text: " + condition;
+        String text = DEFAULT_TEXT;
         String code = null;
         try {
             code = mapper.writeValueAsString(varRsp);
